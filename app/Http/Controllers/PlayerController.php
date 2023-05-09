@@ -30,4 +30,16 @@ class PlayerController extends Controller
     {
         return response()->json($player);
     }
+
+    public function update(Request $request, Player $player)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|string',
+        ]);
+
+        $player->update($validatedData);
+
+        return response()->json($player, 200);
+    }
 }
