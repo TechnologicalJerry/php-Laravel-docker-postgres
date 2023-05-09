@@ -42,4 +42,11 @@ class PlayerController extends Controller
 
         return response()->json($player, 200);
     }
+
+    public function destroy(Player $player)
+    {
+        $player->delete();
+
+        return response()->json(null, 204);
+    }
 }
