@@ -25,4 +25,9 @@ class PlayerController extends Controller
 
         return response()->json($player, 201);
     }
+
+    public function show(Player $player)
+    {
+        return response()->json($player);
+    }
 }
